@@ -131,5 +131,54 @@ public class JavaTest {
 
             System.out.println("Bitch!");
         }
+        //str1=null;
+        System.out.println();
+        if(str1==str2)
+            System.out.println("Bitch!");
+
+        if(str1.equals(str2))
+            System.out.println("Bitch!");
+
+        if(str1.compareTo(str2)==0)
+        {
+
+            System.out.println("Bitch!");
+        }
+
+        String[] str4=str1.split(str2);
+
+        str1.contains("1");
+
+        char[][] c1=new char[3][];
+
+        char[] c2[]=new char[1][2];
+
+        char c3[][]=new char[2][3];
+
+        char[] d=new char[0];
+       // d[0]='q';
+
+        c1[1]=new char[3];
+        c1[2]=new char[4];
+        c1[0]=new char[2];
+
+        System.out.println("c1.length " + c1.length);
+        System.out.println("c1[0].length "+c1[0].length);
+        System.out.println("c1[1].length "+c1[1].length);
+        System.out.println("c1[2].length "+c1[2].length);
+
+        c2[0][0]='a';
+        c2[0][1]='b';
+        c3[0][0]='a';
+        c3[0][1]='b';
+        c3[0][2]='c';
+        c3[1][0]='d';
+        c3[1][1]='e';
+        c3[1][2]='f';
+
+        boolean c2c3= c2==c3;
+
+        System.out.println("c2==c3 = "+c2c3);
+
     }
 }
