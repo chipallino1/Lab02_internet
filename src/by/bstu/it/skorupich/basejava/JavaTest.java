@@ -1,5 +1,7 @@
 package by.bstu.it.skorupich.basejava;
 
+import java.lang.String;
+import java.util.Objects;
 import java.util.Scanner;
 import java.lang.Math.*;
 import java.util.Random;
@@ -169,16 +171,85 @@ public class JavaTest {
 
         c2[0][0]='a';
         c2[0][1]='b';
-        c3[0][0]='a';
-        c3[0][1]='b';
+        c3[0][0]='1';
+        c3[0][1]='2';
         c3[0][2]='c';
         c3[1][0]='d';
         c3[1][1]='e';
         c3[1][2]='f';
 
         boolean c2c3= c2==c3;
+        c2=c3;
 
         System.out.println("c2==c3 = "+c2c3);
 
+        for (char[] a: c2) {
+            System.out.print(a);
+            System.out.print(" ");
+
+        }
+        System.out.println();
+
+        WrapperString ws=new WrapperString("My name is")
+        {
+            @Override
+            public void replace(char newchar,char oldchar)
+            {
+                System.out.println("Hello!");
+
+            }
+        };
+        ws.replace('2','1');
     }
+}
+
+class  WrapperString
+{
+    private String str;
+
+    public WrapperString(String str) {
+        this.str = str;
+    }
+
+    public String getStr() {
+        return str;
+    }
+
+    public void setStr(String str) {
+        this.str = str;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof WrapperString)) return false;
+        WrapperString that = (WrapperString) o;
+        return Objects.equals(str, that.str);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(str);
+    }
+
+    @Override
+    public String toString() {
+        return "WrapperString{" +
+                "str='" + str + '\'' +
+                '}';
+
+
+    }
+    public void replace(char newchar,char oldchar)
+    {
+        this.str.replace(newchar,oldchar);
+
+
+    }
+    /**
+     * Hi my name is {@author egor}
+     * Version {@version 1.0}
+     * @see my dick
+     */
 }
